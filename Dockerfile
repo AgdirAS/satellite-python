@@ -9,4 +9,4 @@ RUN apt-get update && \
         cython3 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir numpy rasterio
+RUN pip install --no-cache-dir setuptools numpy rasterio

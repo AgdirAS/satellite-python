@@ -35,5 +35,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/agdiras/satellite-python:latest
+          build-args: |
+            SEQ_URL=${{ vars.SEQ_URL }}
+            S3_BUCKET=${{ vars.S3_BUCKET }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+

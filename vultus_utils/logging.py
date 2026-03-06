@@ -20,7 +20,7 @@ class SeqLogger(LoggerInterface):
     def __init__(self) -> None:
         super().__init__()
         if not SeqLogger._configured:
-            seq_url = os.environ.get('SEQ_URL', 'http://seq:5341')
+            seq_url = os.environ['SEQ_URL']
             seqlog.log_to_seq(
                 server_url=seq_url,
                 level=logging.DEBUG,

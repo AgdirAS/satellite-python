@@ -10,3 +10,8 @@ RUN apt-get update && \
     && rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir "setuptools<80" numpy rasterio
+
+WORKDIR /app
+COPY pyproject.toml .
+COPY vultus_utils/ ./vultus_utils/
+RUN pip install --no-cache-dir .
